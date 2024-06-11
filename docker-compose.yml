@@ -1,0 +1,19 @@
+services:
+  ui:
+    build:
+      context: https://github.com/huggingface/chat-ui.git
+      dockerfile: /Volumes/dev/hug/Dockerfile
+    volumes:
+      - ./ui.env:/app/.env.local:ro
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo
+    volumes:
+      - mongo:/data/db
+    ports:
+      - 27017:27017
+
+volumes:
+  mongo:
