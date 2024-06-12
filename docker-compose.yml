@@ -1,8 +1,6 @@
 services:
   ui:
-    build:
-      context: https://github.com/huggingface/chat-ui.git
-      dockerfile: /Volumes/dev/hug/Dockerfile
+    image: ghcr.io/huggingface/chat-ui:sha-bfd6b5f
     volumes:
       - ./ui.env:/app/.env.local:ro
     ports:
